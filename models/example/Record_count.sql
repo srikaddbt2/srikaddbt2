@@ -4,14 +4,9 @@
     )
 }}
 
+{% set row_count = get_row_count('my_first_dbt_model') %}
+-- You can then use this row count in your analysis or testing logic
+ {{ row_count }} AS row_count;
 
 
-WITH row_counts AS (
-  SELECT 
-    'my_first_dbt_model' AS table_name,
-    {{get_row_count({{ ref('my_first_dbt_model') }}}}  AS row_count;
-
-))
-
-SELECT * FROM row_counts
 
