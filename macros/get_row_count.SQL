@@ -1,6 +1,7 @@
-{% macro get_row_count(table_name) %}
+{% macro get_row_count(my_first_dbt_model) %}
+      {% set source_tables_query %}
     select count(*) as row_count
-    from {{ ref(table_name) }}
+    from {{ ref(my_first_dbt_model) }}
+     {% endset %}
+    {% do run_query(source_tables_query) %}
 {% endmacro %}
-
- {{ get_row_count('my_table') }}
