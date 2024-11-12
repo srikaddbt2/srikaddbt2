@@ -1,7 +1,11 @@
-{% macro count_records(table_name) %}
-  {% set cnt_tbl %}
-    select count(*) from {{ ref(table_name) }}
+
+
+{% macro get_row_count(table_name) %}
+    {% set query %}
+        SELECT COUNT(*) AS row_count
+        FROM {{ ref(table_name) }}
     {% endset %}
-    {% do run_query(cnt_tbl) %}
+
+      {% do run_query(cnt_tbl) %}
 {% endmacro %}
 

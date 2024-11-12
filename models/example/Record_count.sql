@@ -1,6 +1,7 @@
 
-with record_count as (
-    {{ count_records('my_first_dbt_model') }}
-)
 
-select * from record_count;
+
+with row_count as (
+    select {{ get_row_count('my_table') }} as total_rows
+)
+select * from row_count;
