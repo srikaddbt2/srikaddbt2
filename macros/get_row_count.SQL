@@ -1,5 +1,5 @@
 
-{% macro get_row_count(my_first_dbt_model) %}
+{% macro get_row_count() %}
     {% set cnt_qry %}
      select count(*) as row_count
     from {{ ref(my_first_dbt_model) }}
