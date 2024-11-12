@@ -5,7 +5,7 @@
 }}
 
 with row_count as (
-    {{ get_row_count('DEV.int_schema.my_first_dbt_model') }}
+    {{ get_row_count({{ ref('my_first_dbt_model') }}) }}
 )
 
 select * from row_count;
