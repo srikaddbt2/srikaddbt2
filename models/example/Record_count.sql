@@ -1,8 +1,6 @@
 
 
+{% set row_count = get_row_count{{ ref('my_first_dbt_model') }} %}
 
-with row_count as (
-    select {{ get_row_count('my_first_dbt_model') }} as total_rows
-)
-select * from row_count;
+SELECT {{ row_count }} AS row_count;
 
