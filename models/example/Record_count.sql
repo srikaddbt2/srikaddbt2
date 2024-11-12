@@ -8,8 +8,8 @@
 
 WITH row_counts AS (
   SELECT 
-    'table1' AS table_name,
-    {{ get_row_count(ref('table1')) }} AS row_count
+    'my_first_dbt_model' AS table_name,
+    get_row_count(ref('my_first_dbt_model'))  AS row_count
 
 )
 
