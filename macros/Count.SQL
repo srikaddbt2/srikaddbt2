@@ -5,7 +5,6 @@
         SELECT COUNT(*) AS row_count
         FROM {{ ref(table_name) }}
     {% endset %}
-
       {% do run_query(cnt_tbl) %}
 {% endmacro %}
 
