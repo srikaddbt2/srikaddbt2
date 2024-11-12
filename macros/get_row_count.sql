@@ -1,6 +1,3 @@
-
-{% macro get_row_count(model_name) %}
-
-     select count(*) as row_count
-    from {{ ref(model_name) }}
-{% endmacro %}    
+{% macro get_row_count(table_name) %}
+    select count(*) as row_count from {{ ref(table_name) }}
+{% endmacro %}
