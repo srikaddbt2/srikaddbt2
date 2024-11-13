@@ -5,6 +5,6 @@
 }}
 
 
-    select    {{ get_row_count(ref('my_first_dbt_model')) }} AS row_count
+    select    {{ get_row_count(ref('my_first_dbt_model')) }} AS cnt
 
 
