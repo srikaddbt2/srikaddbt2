@@ -7,7 +7,7 @@
 
 
 with row_count_cte as (
-    {{ get_row_count('my_first_dbt_model') }}  -- Call the macro and pass the table name
+    {{ get_row_count('my_first_dbt_model') }} 
 )
 
 select
