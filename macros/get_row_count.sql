@@ -3,3 +3,4 @@
     select count(*) as row_count from {{ ref(table_name) }}
  
 {% endmacro %}
+
