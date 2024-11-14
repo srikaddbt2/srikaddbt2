@@ -2,9 +2,9 @@
           alias="HOOK_MODEL",
           pre_hook=["insert into INT_SCHEMA.AUDIT_TB select 'HOOK_MODEL','Started',current_timestamp :: timestamp_ntz"],
           post_hook=["insert into INT_SCHEMA.AUDIT_TB select 'HOOK_MODEL','Completed',current_timestamp :: timestamp_ntz",
-                     "GRANT USAGE ON DATABASE DEV TO ROLE analyst_role";
-                     "GRANT USAGE ON SCHEMA DEV.INT_SCHEMA TO ROLE analyst_role";
-                     "GRANT SELECT ON TABLE DEV.INT_SCHEMA.AUDIT_TBL TO ROLE analyst_role"
+                     "GRANT USAGE ON DATABASE DEV TO ROLE analyst_role",
+                     "GRANT USAGE ON SCHEMA DEV.INT_SCHEMA TO ROLE analyst_role",
+                     "GRANT SELECT ON TABLE DEV.INT_SCHEMA.AUDIT_TB TO ROLE analyst_role",
                      "GRANT SELECT ON TABLE DEV.INT_SCHEMA.HOOK_MODEL TO ROLE analyst_role"]
    )
 }}
