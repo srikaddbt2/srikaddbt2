@@ -6,11 +6,11 @@
       target_schema='INT_SCHEMA',
       unique_key='ID',
       strategy='timestamp',
-      updated_at='update_at',
+      updated_at='updated_at',
       invalidate_hard_deletes=True
     )
 }}
 
-select * from DEV.RAW_DATA.ORDERS_RAW
+select * from DEV.RAW_SCHEMA.ORDERS_RAW
 
 {% endsnapshot %}
