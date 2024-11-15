@@ -2,7 +2,8 @@
 config(
 materialized='incremental',
 unique_key='empid',
-alias='EMP_TRG11_APPEND'
+alias='EMP_TRG11_DEL_INS',
+incremental_strategy='delete+insert'
  )
 }}
 
